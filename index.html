@@ -63,7 +63,7 @@
     </section>
 
     <section id="study" class="view">
-      <div class="page-title"><p class="eyebrow">SENTENCE LAB</p><h1>1文ずつ、耳から。</h1><p>再生すると、元動画の該当箇所だけを聞けます。</p></div>
+      <div class="page-title"><p class="eyebrow">SENTENCE LAB</p><h1>聞きながら、単語まで。</h1><p>「クリア」を再生すると、今聞こえている単語と日本語が同期して光ります。</p></div>
       <div class="filter-row">
         <button class="chip is-active" data-filter="all">すべて</button>
         <button class="chip" data-filter="prematch">試合前</button>
@@ -106,15 +106,16 @@
   <template id="lesson-card-template">
     <article class="lesson-card">
       <div class="lesson-meta"><span class="lesson-number"></span><span class="confidence"></span></div>
-      <h3 class="lesson-spanish"></h3>
+      <h3 class="lesson-spanish karaoke-line"></h3>
       <p class="lesson-japanese"></p>
-      <div class="lesson-actions"><button class="listen-btn">▶ 本人</button><button class="clear-btn">◉ クリア</button><button class="save-btn">＋ 覚える</button></div>
+      <div class="lesson-actions"><button class="clear-btn">▶ クリア</button><button class="listen-btn">本人</button><button class="save-btn">＋ 覚える</button></div>
     </article>
   </template>
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="data/lessons.js"></script>
   <script src="data/match-lessons.js"></script>
+  <script src="data/glosses.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
