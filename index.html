@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#dfff00">
+  <meta name="description" content="リカルド・ロドリゲス監督の実際のスペイン語から学ぶ、柏レイソルファン向け学習アプリ。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23dfff00'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-size='34' font-style='italic' font-weight='900'%3ER%3C/text%3E%3C/svg%3E">
+  <title>Ricardo Spanish — Reysol</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Ricardo Spanish home">
+      <span class="brand-mark">R</span>
+      <span><b>RICARDO</b><small>SPANISH / REYSOL</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <button class="nav-btn is-active" data-view="home">ホーム</button>
+      <button class="nav-btn" data-view="study">学ぶ</button>
+      <button class="nav-btn" data-view="words">単語</button>
+      <button class="nav-btn" data-view="quiz">クイズ</button>
+      <button class="nav-btn" data-view="sources">出典</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="view is-active">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">ACTUAL VOICE. ACTUAL CONTEXT.</p>
+          <h1>リカルドの言葉で、<br><em>スペイン語を学ぶ。</em></h1>
+          <p class="lede">日本語訳からの逆算ではなく、本人の音声・出典動画・時刻に結びついた文だけを教材にしています。</p>
+          <div class="hero-actions">
+            <button class="primary" data-jump="study">学習を始める <span>→</span></button>
+            <button class="secondary" data-jump="sources">出典を見る</button>
+          </div>
+        </div>
+        <div class="score-card" aria-label="Corpus summary">
+          <div class="score-orbit"><span id="progress-ring">0%</span></div>
+          <p>YOUR PROGRESS</p>
+          <div class="score-stats">
+            <div><b id="stat-lessons">0</b><small>文</small></div>
+            <div><b id="stat-words">0</b><small>頻出語</small></div>
+            <div><b id="stat-sources">0</b><small>一次音源</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <div><p class="eyebrow">START HERE</p><h2>今日の3文</h2></div>
+        <button class="text-btn" data-jump="study">すべて見る →</button>
+      </div>
+      <div id="featured-lessons" class="lesson-grid"></div>
+
+      <div class="principles">
+        <article><span>01</span><h3>音声が根拠</h3><p>全教材を再生可能な一次動画と秒数に紐付け。</p></article>
+        <article><span>02</span><h3>不確実さを表示</h3><p>自動字幕の正規化と、確認度を明示。</p></article>
+        <article><span>03</span><h3>サッカー文脈</h3><p>戦術・試合・チーム作りの意味まで日本語で解説。</p></article>
+      </div>
+    </section>
+
+    <section id="study" class="view">
+      <div class="page-title"><p class="eyebrow">SENTENCE LAB</p><h1>1文ずつ、耳から。</h1><p>再生すると、元動画の該当箇所だけを聞けます。</p></div>
+      <div class="filter-row">
+        <button class="chip is-active" data-filter="all">すべて</button>
+        <button class="chip" data-filter="prematch">試合前</button>
+        <button class="chip" data-filter="postmatch">試合後</button>
+        <button class="chip" data-filter="identity">スタイル</button>
+        <button class="chip" data-filter="team">チーム</button>
+      </div>
+      <div id="study-list" class="study-list"></div>
+    </section>
+
+    <section id="words" class="view">
+      <div class="page-title"><p class="eyebrow">WORD BANK</p><h1>リカルド頻出語。</h1><p>このコーパスで何度も現れる、次のインタビューにも効く表現です。</p></div>
+      <div id="word-cloud" class="word-cloud"></div>
+      <div id="word-list" class="word-list"></div>
+    </section>
+
+    <section id="quiz" class="view">
+      <div class="page-title"><p class="eyebrow">MATCH QUIZ</p><h1>聞いて、選ぶ。</h1><p>実際の音声を聞き、意味または欠けた語を選びます。</p></div>
+      <div id="quiz-shell" class="quiz-shell"></div>
+    </section>
+
+    <section id="sources" class="view">
+      <div class="page-title"><p class="eyebrow">PROVENANCE</p><h1>出典を隠さない。</h1><p>採用した一次音源と、見つかったが教材化できなかった資料を分けています。</p></div>
+      <div id="source-list" class="source-list"></div>
+      <details class="recovery-ledger">
+        <summary><span>回収待ち台帳</span><b>削除済み20本</b></summary>
+        <p>2025年の試合後監督インタビューは検索結果から動画IDと節を復元しましたが、現在すべてYouTubeから削除済みです。音声がないため教材には混ぜていません。</p>
+        <div id="deleted-ledger" class="deleted-ledger"></div>
+      </details>
+    </section>
+  </main>
+
+  <aside id="player-dock" class="player-dock" aria-live="polite">
+    <button id="dock-close" class="dock-close" aria-label="プレーヤーを閉じる">×</button>
+    <div class="dock-copy"><small>NOW PLAYING</small><b id="dock-title">—</b><span id="dock-time">—</span></div>
+    <div id="yt-player"></div>
+    <audio id="clip-player" controls preload="none"></audio>
+  </aside>
+
+  <template id="lesson-card-template">
+    <article class="lesson-card">
+      <div class="lesson-meta"><span class="lesson-number"></span><span class="confidence"></span></div>
+      <h3 class="lesson-spanish"></h3>
+      <p class="lesson-japanese"></p>
+      <div class="lesson-actions"><button class="listen-btn">▶ 本人</button><button class="clear-btn">◉ クリア</button><button class="save-btn">＋ 覚える</button></div>
+    </article>
+  </template>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="data/lessons.js"></script>
+  <script src="data/match-lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

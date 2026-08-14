@@ -1,0 +1,10 @@
+{
+  "name":"Ricardo Spanish — Reysol",
+  "short_name":"Ricardo ES",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f5f5ef",
+  "theme_color":"#dfff00",
+  "description":"Learn Spanish from Ricardo Rodriguez's actual Kashiwa Reysol interviews.",
+  "icons":[]
+}
