@@ -1,5 +1,5 @@
-const CACHE = "ricardo-spanish-v6";
-const ASSETS = ["./", "index.html", "styles.css", "app.js", "data/lessons.js", "data/match-lessons.js", "data/glosses.js", "manifest.json"];
+const CACHE = "ricardo-spanish-v7";
+const ASSETS = ["./", "index.html", "styles.css", "app.js", "data/lessons.js", "data/match-lessons.js", "data/glosses.js", "data/clear-timings.js", "manifest.json"];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))));
 self.addEventListener("activate", event => event.waitUntil(Promise.all([
   self.clients.claim(),
